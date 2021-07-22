@@ -6,6 +6,7 @@ const cors = require('cors');
 const path = require('path');
 
 const sequelize = require('./db/db');
+const errorHandlingMiddleware = require('./middlewares/error/error-handling.middleware');
 
 const PORT = process.env.PORT || 5000;
 
@@ -16,6 +17,8 @@ app.use(express.static(path.resolve(__dirname, 'static')));
 app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
+
+app.use(errorHandlingMiddleware);
 
 const start = async () => {
 	await sequelize.authenticate();
