@@ -12,6 +12,7 @@ module.exports = {
 	},
 	rules: {
 		'no-tabs': 'off',
+		'class-methods-use-this': 'off',
 		indent: ['error', 'tab'],
 	},
 };
