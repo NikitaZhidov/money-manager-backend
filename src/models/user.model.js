@@ -23,6 +23,12 @@ const UserModel = sequelize.define('user', {
 	name: {
 		type: DataTypes.STRING, allowNull: false,
 	},
+	activationLink: {
+		type: DataTypes.STRING,
+	},
+	isActivated: {
+		type: DataTypes.BOOLEAN, defaultValue: false,
+	},
 });
 
 UserModel.hasMany(IncomeCategoryModel);
