@@ -1,5 +1,5 @@
-const ResponseDto = require('../../helpers/dto/response-dto');
-const ApiError = require('../../helpers/error/api-error');
+const { ResponseDto } = require('../../helpers');
+const { ApiError } = require('../../helpers');
 
 // eslint-disable-next-line no-unused-vars
 function errorHandlingMiddleware(err, req, res, next) {
@@ -7,7 +7,7 @@ function errorHandlingMiddleware(err, req, res, next) {
 		return res.status(err.status).json(new ResponseDto({}, [err.message]));
 	}
 
-	return res.status(500).json(new ResponseDto({}, ['Непредвиденная ошибка']));
+	return res.status(500).json(new ResponseDto({}, 'Непредвиденная ошибка'));
 }
 
 module.exports = errorHandlingMiddleware;
