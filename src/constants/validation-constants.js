@@ -1,0 +1,11 @@
+const PASS_MIN_LENGTH = 5;
+const PASS_MAX_LENGTH = 80;
+const NAME_MIN_LENGTH = 4;
+const NAME_MAX_LENGTH = 30;
+
+module.exports = {
+	PASS_MIN_LENGTH,
+	PASS_MAX_LENGTH,
+	NAME_MIN_LENGTH,
+	NAME_MAX_LENGTH,
+};
