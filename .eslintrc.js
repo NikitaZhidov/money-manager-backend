@@ -13,6 +13,7 @@ module.exports = {
 	rules: {
 		'no-tabs': 'off',
 		'class-methods-use-this': 'off',
+		'no-underscore-dangle': 'off',
 		indent: ['error', 'tab'],
 	},
 };
