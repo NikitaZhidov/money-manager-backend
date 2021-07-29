@@ -3,7 +3,8 @@ const { Router } = require('express');
 const { userController } = require('../controllers');
 const {
 	registrationValidators,
-	registrationValidationMiddleware,
+	authValidators,
+	validationMiddleware,
 } = require('../middlewares/validation');
 
 const router = Router();
@@ -11,13 +12,30 @@ const router = Router();
 router.post(
 	'/registration',
 	registrationValidators,
-	registrationValidationMiddleware,
+	validationMiddleware,
 	userController.registration,
 );
 
 router.get(
 	'/activate/:link',
 	userController.activate,
+);
+
+router.post(
+	'/login',
+	authValidators,
+	validationMiddleware,
+	userController.login,
+);
+
+router.post(
+	'/logout',
+	userController.logout,
+);
+
+router.get(
+	'/refresh',
+	userController.refresh,
 );
 
 module.exports = router;
