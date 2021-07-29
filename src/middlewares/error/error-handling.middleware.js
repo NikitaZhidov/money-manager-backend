@@ -1,3 +1,4 @@
+const { ERR_MSG } = require('../../constants/messages-constants');
 const { ResponseDto } = require('../../helpers');
 const { ApiError } = require('../../helpers');
 
@@ -7,7 +8,7 @@ function errorHandlingMiddleware(err, req, res, next) {
 		return res.status(err.status).json(new ResponseDto({}, [err.message]));
 	}
 
-	return res.status(500).json(new ResponseDto({}, 'Непредвиденная ошибка'));
+	return res.status(500).json(new ResponseDto({}, ERR_MSG.UNKNOWN));
 }
 
 module.exports = errorHandlingMiddleware;
