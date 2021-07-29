@@ -3,6 +3,7 @@ class UserDto {
 		this.email = user.email;
 		this.id = user.id;
 		this.isActivated = user.isActivated;
+		this.name = user.name;
 	}
 }
 
